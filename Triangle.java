@@ -40,4 +40,8 @@ public class Triangle{
     return "isosceles";
   }
 
+  public String toString(){
+    return "v1(" + v1.getX() + "," + v1.getY() + ") v2(" + v2.getX() + "," + v2.getY() + ") v3(" + v3.getX() + "," + v3.getY() + ")";
+  }
+
 }
