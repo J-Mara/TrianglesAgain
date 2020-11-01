@@ -22,8 +22,22 @@ public class Triangle{
   public double getArea(){
     double S = getPerimeter()/2;
     return Math.sqrt(S * (S - v1.distanceTo(v2)) *
-    (S - v2.distanceTo(v3)) * 
+    (S - v2.distanceTo(v3)) *
     (S - v3.distanceTo(v1)));
+  }
+
+  public String classify(){
+    if(Math.round(10000 * v1.distanceTo(v2)) == Math.round(10000 * v2.distanceTo(v3)) &&
+    Math.round(10000 * v2.distanceTo(v3)) == Math.round(10000 * v3.distanceTo(v1)) &&
+    Math.round(10000 * v3.distanceTo(v1)) == Math.round(10000 * v1.distanceTo(v2))){
+      return "equilateral";
+    }
+    if(Math.round(10000 * v1.distanceTo(v2)) != Math.round(10000 * v2.distanceTo(v3)) &&
+    Math.round(10000 * v2.distanceTo(v3)) != Math.round(10000 * v3.distanceTo(v1)) &&
+    Math.round(10000 * v3.distanceTo(v1)) != Math.round(10000 * v1.distanceTo(v2))){
+      return "scalene";
+    }
+    return "isosceles";
   }
 
 }
